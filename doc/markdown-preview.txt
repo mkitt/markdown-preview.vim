@@ -1,0 +1,162 @@
+*markdown-preview.txt*
+
+Author:
+  Matthew Kitt <mk dot kitt at gmail dot com>
+
+This plugin is licensed under the terms of the MIT License.  Please see
+markdown-preview.vim for the license in its entirety.
+
+==============================================================================
+Markdown Preview                        *markdown-preview*
+
+1. Introduction                         |markdown-preview-intro|
+2. Dependencies                         |markdown-preview-dependencies|
+3. Usage                                |markdown-preview-usage|
+4. Options                              |markdown-preview-options|
+    Temporary File Directory            |markdown-preview-tmpdir|
+    Default Styles                      |markdown-preview-defaultstyles|
+    User Styles                         |markdown-preview-userstyles|
+    Default Theme                       |markdown-preview-defaulttheme|
+    Always Open                         |markdown-preview-alwaysopen|
+5. Themes                               |markdown-preview-themes|
+6. Workflow                             |markdown-preview-workflow|
+==============================================================================
+1. Introduction                         *markdown-preview-intro*
+
+Markdown Preview allows you to compile and preview markdown as generated HTML
+files. It has the ability to select and use customized stylesheets for 
+previewing your own awesomeness. Previewing occurs within the default browser.
+==============================================================================
+2. Dependencies                         *markdown-preview-dependencies*
+
+Markdown Preview requires the following:
+- Vim version 7.0 or above
+- Ruby support for vim
+- BlueCloth for converting markdown to html (gem install bluecloth)
+
+While not a requirement, default directories are tailored to work within a
+bundle directory as specified by the pathogen plugin.
+==============================================================================
+3. Usage                                *markdown-preview-usage*
+
+Send vim the command :MDP within a markdown file and it will convert and
+generate a temporary HTML file. You probably want to map this command to a 
+leader shortcut: map <leader>p :MDP<CR>.
+
+Send vim the command :CMDP within a markdown file and it will clear out
+all the temporary files that have been generated. These are automatically
+cleaned up everytime you launch your vim editor.
+
+See also below for workflow suggestions.
+==============================================================================
+4. Options                              *markdown-preview-options*
+
+Markdown Preview comes configured with a few global variables which can be
+overridden within you .vimrc file.
+
+g:MarkdownPreviewTMP                    *markdown-preview-tmpdir*
+  This is the directory where the temporary HTML files are saved after being
+  generated. These are cleaned out everytime you relaunch vim. The default
+  setting is ~/.vim/bundle/markdown-preview.vim/tmp/. To override this location:
+
+    let g:MarkdownPreviewTMP = $HOME.'/.vim/tmp/'
+
+g:MarkdownPreviewDefaultStyles          *markdown-preview-defaultstyles*
+  This is the directory where default style themes live. At the moment 2 are 
+  included with this plugin: github, colorblind. The default setting is at
+  ~/.vim/bundle/markdown-preview.vim/stylesheets/. To override this location:
+
+    let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/stylesheets/'
+
+  Setting up themes is explained in more detail below.
+
+g:MarkdownPreviewUserStyles             *markdown-preview-userstyles*
+  This is the directory where user style themes live. This is something
+  you would want to define in your .vimrc file as it's included to allow
+  a customized set of themes for various uses. For simplicity, it will
+  default to whatever the g:MarkdownPreviewTMP directory is and will not
+  show any user styles within the select options.
+
+    let g:MarkdownPreviewUserStyles = ~/Sites/themes/markdown/
+
+  Setting up themes is explained in more detail below.
+
+g:MarkdownPreviewDefaultTheme           *markdown-preview-defaulttheme*
+  The default theme converted markdown themes will start with after they
+  are generated for the first time. Defaults to github which is bundled
+  with the default styles. To override:
+
+    let g:MarkdownPreviewDefaultTheme = 'colorblind'
+
+g:MarkdownPreviewAlwaysOpen             *markdown-preview-alwaysopen*
+  By default Markdown Preview will only open the browser window the first
+  time you generate a file. After that, it will generate the file, but not
+  open the browser window. See the workflow section below for more information.
+  To override this setting and have the browser window open everytime set the
+  following in your .vimrc file:
+
+    let g:MarkdownPreviewAlwaysOpen = 1
+==============================================================================
+5. Themes                               *markdown-preview-themes*
+
+Markdown Previews can be themed with different CSS stylesheets. Included are 
+2 default themes which can be used for reference when creating user specific
+themes. The User directory should be setup similar to the default styles in:
+~/.vim/bundle/markdown-preview.vim/stylesheets/
+
+There are a few rules for setting User themes up. 
+
+Included in the global variables are an option for setting a location to where 
+the User themes live. Set those up in your .vimrc file first like so: 
+let g:MarkdownPreviewUserStyles = ~/Sites/themes/markdown/
+
+Then within your theme directory create additional directories for each theme 
+you might generate. For each of those themes you'll need to create a style.css
+file and optionally a print.css file (you can also create an images or support
+folder in there as well if thats what you need). So for example, your User theme
+directory should look like this:
+
+  -Sites
+  | - themes
+  | | - markdown
+  | | | - snowblind
+  | | | | - style.css
+  | | | | - print.css
+  | | | | - images
+  | | | | | - bg.png
+  | | | + my-other-theme
+
+Use one of the default themes as a starting point. You'll need to make sure 
+your user styles are namespaced to whatever theme you've named the parent
+directory. Once complete, you should see your themes in the select menu within
+the header.
+==============================================================================
+6. Workflow                             *markdown-preview-workflow*
+
+A couple of notes about workflow, what has worked for me and why some settings
+are the way they are.
+
+In my .vimrc file, I listen for a BufWritePost on markdown files and call two
+commands, first :MDP to convert the file and if the file hasn't been 
+generated it will open the browser. The second command reloads the front page 
+of the current running browser and returns focus to vim. The second time I 
+save, the file is converted, but a new window is not open based on the
+default setting of g:MarkdownPreviewAlwaysOpen = 0. In my workflow, I've
+left the browser window open and a page reload is called, focus is returned
+to Vim and walla, sort of a live preview while I'm editing.
+
+The only drawback from this setting is if I happen to close the browser window,
+the plugin has no way of knowing this and won't open a window the next time
+you generate :MDP for that file. You basically have to either navigate to the
+temp file from your history or call the command :CMDP and run :MDP again.
+
+You can always override this behavior by setting:
+
+  let g:MarkdownPreviewAlwaysOpen = 1
+
+With this set, a system.open is called everytime the :MDP command is issued.
+This has negative effects within some browsers as it keeps generating new
+windows. While not a big deal, if you are using a theme that is not your
+default, you'll have to continually select the theme you are looking for.
+Cookies on files within the file system do not actually work.
+==============================================================================
