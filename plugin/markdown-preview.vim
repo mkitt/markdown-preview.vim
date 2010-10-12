@@ -50,11 +50,6 @@ if !exists("g:MarkdownPreviewDefaultTheme")
   let g:MarkdownPreviewDefaultTheme = 'github'
 endif
 
-" Kill out any existing files in temp dir at startup or source of .vimrc.
-" if !empty(globpath(g:MarkdownPreviewTMP, "*"))
-  " silent execute '!rm -r '.MarkdownPreviewTMP.'*'
-" endif
-
 " Whether to always open a new window everyime a file is generated
 if !exists("g:MarkdownPreviewAlwaysOpen")
   let g:MarkdownPreviewAlwaysOpen = 0
@@ -68,7 +63,6 @@ endfunction
 
 call ClearMarkdownPreview()
 
-"
 function! MarkdownPreview()
 ruby << EOF
   require 'rubygems'
