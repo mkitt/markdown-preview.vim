@@ -36,6 +36,11 @@ if (exists("g:loaded_markdownpreview") && g:loaded_markdownpreview) || &cp
 endif
 let g:loaded_markdownpreview = 1
 
+" Scoot if not in gui
+if !has("gui_running")
+  finish
+endif
+
 " Blow out of here if the parser is installed
 if !executable('bluecloth')
   finish

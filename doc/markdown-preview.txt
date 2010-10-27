@@ -36,6 +36,8 @@ Markdown Preview requires the following:
 
 While not a requirement, default directories are tailored to work within a
 bundle directory as specified by the pathogen plugin.
+
+Currently Markdown Preview has only been tested within MacVim.
 ==============================================================================
 3. Usage                                *markdown-preview-usage*
 
@@ -161,3 +163,4 @@ windows. While not a big deal, if you are using a theme that is not your
 default, you'll have to continually select the theme you are looking for.
 Cookies on files within the file system do not actually work.
 ==============================================================================
+vim:tw=78:ts=8:ft=help:norl:
