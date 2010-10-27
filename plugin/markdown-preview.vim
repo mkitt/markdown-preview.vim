@@ -27,7 +27,19 @@
 " WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 " FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 " OTHER DEALINGS IN THE SOFTWARE
-"
+
+" Bail quickly when:
+" - this plugin was already loaded or disabled
+" - when 'compatible' is set
+if (exists("g:loaded_markdownpreview") && g:loaded_markdownpreview) || &cp
+  finish
+endif
+let g:loaded_markdownpreview = 1
+
+" Blow out of here if the parser is installed
+if !executable('bluecloth')
+  finish
+endif
 
 " Globals (can be overriden in .vimrc)
 " Location to save the temp html files
