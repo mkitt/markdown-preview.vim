@@ -1,0 +1,202 @@
+
+.snowblind {
+  background: #FFF;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 920px;
+  height: 100%;
+  font: normal normal normal 13.34px/normal Helvetica, Arial, freesans, clean, sans-serif;
+  *font-size: small;
+  color: #000;
+}
+
+/* Header and theme selector */
+
+.snowblind .header h2 {
+  margin-top: 1em;
+  font-size: 140%;
+  font-weight: normal;
+  color: #0000FF;
+}
+
+.snowblind .header select {
+  margin-top: -2em;
+  float: right;
+}
+
+.snowblind .header select,
+.snowblind .header option {
+  padding: 0 0.25em;
+}
+
+.snowblind .header optgroup {
+  margin-top: 0.5em;
+}
+
+
+/* Theme for markdown document */
+
+.snowblind .wikistyle {
+  line-height: 1.4em;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  border: 1px dotted #000;
+  margin: 1em 0;
+  padding: 0.7em;
+}
+
+.snowblind .wikistyle img {
+  border: 0;
+  max-width: 100%;
+}
+
+.snowblind .wikistyle h1,
+.snowblind .wikistyle h2,
+.snowblind .wikistyle h3,
+.snowblind .wikistyle h4,
+.snowblind .wikistyle h5,
+.snowblind .wikistyle h6 {
+  border: 0 !important;
+  margin-bottom: 1em !important;
+  color: #FF6400;
+  font-size: 1.25em;
+}
+
+.snowblind .wikistyle h1 {
+  font-size: 2.0em !important;
+  border-top: 2px dotted #FF00FF !important;
+  padding-top: 0.5em !important;
+  margin-top: 1.5em !important;
+}
+
+.snowblind .wikistyle h1:first-child {
+  margin-top: 0 !important;
+  padding-top: 0.25em !important;
+  border-top: none !important;
+}
+
+.snowblind .wikistyle h2 {
+  font-size: 1.75em !important;
+  margin-top: 1.5em !important;
+  border-top: 1px dotted #FF00FF !important;
+  padding-top: 0.5em !important;
+}
+
+.snowblind .wikistyle h3 {
+  font-size: 1.5em;
+  margin-top: 1em !important;
+}
+
+.snowblind .wikistyle h4 {
+  font-style: italic;
+}
+
+.snowblind .wikistyle h5 {
+  border-bottom: 1px dotted #FF6400 !important;
+  margin-bottom: 0.3em;
+  padding-bottom: 0.2em;
+}
+
+.snowblind .wikistyle h6 {
+}
+
+.snowblind .wikistyle p {
+  margin: 1em 0 !important;
+  line-height: 1.5em !important;
+}
+
+.snowblind .wikistyle a {
+  color: #3D9C00;
+  text-decoration: none;
+  outline: none;
+}
+
+.snowblind .wikistyle a:hover {
+  text-decoration: underline;
+}
+
+.snowblind .wikistyle ul,
+.snowblind .wikistyle ol {
+  margin: 1em 0 1em 2em !important;
+}
+
+.snowblind .wikistyle ul li,
+.snowblind .wikistyle ol li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.snowblind .wikistyle ul ul,
+.snowblind .wikistyle ul ol,
+.snowblind .wikistyle ol ol,
+.snowblind .wikistyle ol ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.snowblind .wikistyle dt {
+  font-weight: bold !important;
+  color: #A00000 !important;
+  margin-left: 1em !important;
+}
+
+.snowblind .wikistyle dd {
+  margin-left: 2em !important;
+  margin-bottom: 1em !important;
+}
+
+.snowblind .wikistyle pre,
+.snowblind .wikistyle code {
+  font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+  font-size: 12px !important;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: #000 !important;
+  border: 1px dotted #555 !important;
+}
+
+.snowblind .wikistyle pre {
+  margin: 1em 0 !important;
+  padding: 1.5em !important;
+  line-height: 1.4em !important;
+  overflow: auto !important;
+}
+
+.snowblind .wikistyle code {
+  padding: 0 0.5em !important;
+}
+
+.snowblind .wikistyle pre code {
+  padding: 0 !important;
+  font-size: 12px !important;
+  background: none !important;
+  border: none !important;
+}
+
+.snowblind .wikistyle blockquote {
+  margin: 1em 0 !important;
+  border-left: 1px dotted #FF00FF !important;
+  padding-left: 0.6em !important;
+  color: #0064FF;
+}
+
+.snowblind .wikistyle abbr {
+  border-bottom: none;
+}
+
+.snowblind .wikistyle table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+.snowblind .wikistyle table th {
+  border-bottom: 1px solid #bbb !important;
+  padding: 0.2em 1em !important;
+}
+
+.snowblind .wikistyle table td {
+  border-bottom: 1px solid #ddd !important;
+  padding: 0.2em 1em !important;
+}
+
+

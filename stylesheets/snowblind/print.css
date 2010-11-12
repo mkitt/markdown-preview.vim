@@ -1,0 +1,35 @@
+
+.snowblind {
+  background: #FFF;
+  font-size: 11pt;
+  color: #000;
+}
+
+.snowblind .header {
+  display: none;
+}
+
+.snowblind .wikistyle {
+  border: none;
+}
+
+.snowblind .wikistyle h1 {
+ border-style: solid !important;
+}
+
+.snowblind .wikistyle h2 {
+ border-style: solid !important;
+}
+
+.snowblind .wikistyle h5 {
+  border-style: solid !important;
+}
+.snowblind .wikistyle pre,
+.snowblind .wikistyle code {
+  border-style: solid !important;
+}
+
+.snowblind .wikistyle blockquote {
+  border-left-style: solid !important;
+}
+
