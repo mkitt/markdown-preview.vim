@@ -1,6 +1,7 @@
 
 .colorblind {
-  background: #000 url('images/bg.png') repeat top left;
+  /* background: #000 url('images/bg.png') repeat top left; */
+  background: #333;
   margin: 0 auto;
   padding: 0 15px;
   width: 920px;
