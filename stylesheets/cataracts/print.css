@@ -1,0 +1,35 @@
+
+.cataracts {
+  background: #FFF;
+  font-size: 11pt;
+  color: #000;
+}
+
+.cataracts .header {
+  display: none;
+}
+
+.cataracts .wikistyle {
+  border: none;
+}
+
+.cataracts .wikistyle h1 {
+ border-style: solid !important;
+}
+
+.cataracts .wikistyle h2 {
+ border-style: solid !important;
+}
+
+.cataracts .wikistyle h5 {
+  border-style: solid !important;
+}
+.cataracts .wikistyle pre,
+.cataracts .wikistyle code {
+  border-style: solid !important;
+}
+
+.cataracts .wikistyle blockquote {
+  border-left-style: solid !important;
+}
+

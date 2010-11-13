@@ -1,0 +1,202 @@
+
+.bloodshot {
+  background: #111;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 920px;
+  height: 100%;
+  font: normal normal normal 13.34px/normal Helvetica, Arial, freesans, clean, sans-serif;
+  *font-size: small;
+  color: #DDD;
+}
+
+/* Header and theme selector */
+
+.bloodshot .header h2 {
+  margin-top: 1em;
+  font-size: 140%;
+  font-weight: normal;
+  color: #4F92D1;
+}
+
+.bloodshot .header select {
+  margin-top: -2em;
+  float: right;
+}
+
+.bloodshot .header select,
+.bloodshot .header option {
+  padding: 0 0.25em;
+}
+
+.bloodshot .header optgroup {
+  margin-top: 0.5em;
+}
+
+
+/* Theme for markdown document */
+
+.bloodshot .wikistyle {
+  line-height: 1.4em;
+  /* background-color: rgba(0, 0, 0, 0.6); */
+  border: 1px dotted #999;
+  margin: 1em 0;
+  padding: 0.7em;
+}
+
+.bloodshot .wikistyle img {
+  border: 0;
+  max-width: 100%;
+}
+
+.bloodshot .wikistyle h1,
+.bloodshot .wikistyle h2,
+.bloodshot .wikistyle h3,
+.bloodshot .wikistyle h4,
+.bloodshot .wikistyle h5,
+.bloodshot .wikistyle h6 {
+  border: 0 !important;
+  margin-bottom: 1em !important;
+  color: #FF6400;
+  font-size: 1.25em;
+}
+
+.bloodshot .wikistyle h1 {
+  font-size: 2.0em !important;
+  border-top: 2px dotted #00FFFF !important;
+  padding-top: 0.5em !important;
+  margin-top: 1.5em !important;
+}
+
+.bloodshot .wikistyle h1:first-child {
+  margin-top: 0 !important;
+  padding-top: 0.25em !important;
+  border-top: none !important;
+}
+
+.bloodshot .wikistyle h2 {
+  font-size: 1.75em !important;
+  margin-top: 1.5em !important;
+  border-top: 1px dotted #00FFFF !important;
+  padding-top: 0.5em !important;
+}
+
+.bloodshot .wikistyle h3 {
+  font-size: 1.5em;
+  margin-top: 1em !important;
+}
+
+.bloodshot .wikistyle h4 {
+  font-style: italic;
+}
+
+.bloodshot .wikistyle h5 {
+  border-bottom: 1px dotted #FF9600 !important;
+  margin-bottom: 0.3em;
+  padding-bottom: 0.2em;
+}
+
+.bloodshot .wikistyle h6 {
+}
+
+.bloodshot .wikistyle p {
+  margin: 1em 0 !important;
+  line-height: 1.5em !important;
+}
+
+.bloodshot .wikistyle a {
+  color: #3D9C00;
+  text-decoration: none;
+  outline: none;
+}
+
+.bloodshot .wikistyle a:hover {
+  text-decoration: underline;
+}
+
+.bloodshot .wikistyle ul,
+.bloodshot .wikistyle ol {
+  margin: 1em 0 1em 2em !important;
+}
+
+.bloodshot .wikistyle ul li,
+.bloodshot .wikistyle ol li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.bloodshot .wikistyle ul ul,
+.bloodshot .wikistyle ul ol,
+.bloodshot .wikistyle ol ol,
+.bloodshot .wikistyle ol ul {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.bloodshot .wikistyle dt {
+  font-weight: bold !important;
+  color: #CB0000 !important;
+  margin-left: 1em !important;
+}
+
+.bloodshot .wikistyle dd {
+  margin-left: 2em !important;
+  margin-bottom: 1em !important;
+}
+
+.bloodshot .wikistyle pre,
+.bloodshot .wikistyle code {
+  font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
+  font-size: 12px !important;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #FFF !important;
+  border: 1px dotted #555 !important;
+}
+
+.bloodshot .wikistyle pre {
+  margin: 1em 0 !important;
+  padding: 1.5em !important;
+  line-height: 1.4em !important;
+  overflow: auto !important;
+}
+
+.bloodshot .wikistyle code {
+  padding: 0 0.5em !important;
+}
+
+.bloodshot .wikistyle pre code {
+  padding: 0 !important;
+  font-size: 12px !important;
+  background-color: none;
+  border: none !important;
+}
+
+.bloodshot .wikistyle blockquote {
+  margin: 1em 0 !important;
+  border-left: 1px dotted #009999 !important;
+  padding-left: 0.6em !important;
+  color: #0000FF;
+}
+
+.bloodshot .wikistyle abbr {
+  border-bottom: none;
+}
+
+.bloodshot .wikistyle table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0;
+  line-height: 1.5em;
+}
+
+.bloodshot .wikistyle table th {
+  border-bottom: 1px solid #bbb !important;
+  padding: 0.2em 1em !important;
+}
+
+.bloodshot .wikistyle table td {
+  border-bottom: 1px solid #ddd !important;
+  padding: 0.2em 1em !important;
+}
+
+
