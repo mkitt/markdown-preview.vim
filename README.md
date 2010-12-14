@@ -30,7 +30,6 @@ Has only been tested to work with MacVim at this point.
 
 - Add the ability to save HTML output instead of the tmp directory?
 - Generate PDFs instead of using the browsers save as feature?
-- Test from other environments
 - Navigate to position in browser from position of cursor within file
 
 
