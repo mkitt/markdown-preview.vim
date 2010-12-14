@@ -1,18 +1,23 @@
 
-.github {
+.readable {
   background-color: #FFF !important;
   margin: 0 auto !important;
   padding: 0 15px !important;
   width: 920px !important;
   height: 100% !important;
-  font: normal normal normal 13.34px/normal Helvetica, Arial, freesans, clean, sans-serif !important;
+  font: normal normal normal 20px/normal Georgia, 'Times New Roman', Times, serif !important;
   *font-size: small !important;
   color: #000 !important;
 }
 
 /* Header and theme selector */
 
-.github .header h2 {
+.readable .header {
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #444 !important;
+}
+
+.readable .header h2 {
   margin: 1em 0 0 0 !important;
   font-size: 140% !important;
   font-weight: normal !important;
@@ -20,162 +25,174 @@
   padding-top: 0 !important;
 }
 
-.github .header select {
+.readable .header select {
   margin-top: -2em !important;
   float: right !important;
 }
 
-.github .header select,
-.github .header option {
+.readable .header select,
+.readable .header option {
   padding: 0 0.25em !important;
 }
 
-.github .header optgroup {
+.readable .header optgroup {
   margin-top: 0.5em !important;
 }
 
 /* Theme for markdown document */
 
-.github .wikistyle {
+.readable .wikistyle {
   line-height: 1.4em;
-  background-color: #F8F8F8 !important;
-  border: 1px solid #CCC !important;
   margin: 1em 0 !important;
   padding: 0.7em !important;
 }
 
-.github img {
+.readable img {
   border: 0 !important;
   max-width: 100% !important;
 }
 
-.github h1,
-.github h2,
-.github h3,
-.github h4,
-.github h5,
-.github h6 {
+.readable h1,
+.readable h2,
+.readable h3,
+.readable h4,
+.readable h5,
+.readable h6 {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, 'Times New Roman', Times, Georgia, serif;
   border: 0 !important;
   margin-bottom: 1em !important;
 }
 
-.github h1 {
+.readable h1 {
   font-size: 170% !important;
-  border-top: 4px solid #aaa !important;
+  border-top: 4px solid #e0e0e0 !important;
   padding-top: 0.5em !important;
   margin-top: 1.5em !important;
 }
 
-.github h1:first-child {
+.readable h1:first-child {
   margin-top: 0 !important;
   padding-top: 0.25em !important;
   border-top: none !important;
 }
 
-.github h2 {
+.readable h2 {
   font-size: 150% !important;
   margin-top: 1.5em !important;
   border-top: 4px solid #e0e0e0 !important;
   padding-top: 0.5em !important;
 }
 
-.github h3 {
+.readable h3 {
   margin-top: 1em !important;
 }
 
-.github p {
+.readable h4 {
+  font-style: italic !important;
+}
+
+.readable h5 {
+  border-bottom: 1px dotted #444 !important;
+  margin-bottom: 0.3em !important;
+  padding-bottom: 0.2em !important;
+}
+
+.readable h6 {
+}
+
+.readable p {
   margin: 1em 0 !important;
   line-height: 1.5em !important;
 }
 
-.github a {
-  color: #4183C4 !important;
+.readable a {
+  color: #C52696 !important;
   text-decoration: none !important;
   outline: none !important;
 }
 
-.github a:hover {
+.readable a:hover {
   text-decoration: underline !important;
 }
 
-.github ul,
-.github ol {
+.readable ul,
+.readable ol {
   margin: 1em 0 1em 2em !important;
 }
 
-.github ul li,
-.github ol li {
+.readable ul li,
+.readable ol li {
   margin-top: 0.5em !important;
   margin-bottom: 0.5em !important;
 }
 
-.github ul ul,
-.github ul ol,
-.github ol ol,
-.github ol ul {
+.readable ul ul,
+.readable ul ol,
+.readable ol ol,
+.readable ol ul {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
 }
 
-.github dt {
+.readable dt {
   font-weight: bold !important;
   margin-left: 1em !important;
 }
 
-.github dd {
+.readable dd {
   margin-left: 2em !important;
   margin-bottom: 1em !important;
 }
 
-.github pre,
-.github code {
-  font: 12px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace !important;
-  font-size: 12px !important;
+.readable pre,
+.readable code {
+  font: 16px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace !important;
+  font-size: 16px !important;
   background-color: #F8F8FF !important;
   color: #444 !important;
-  border: 1px solid #DEDEDE !important;
+  border: 1px dotted #444 !important;
 }
 
-.github pre {
+.readable pre {
   margin: 1em 0 !important;
   padding: 0.5em !important;
   line-height: 1.4em !important;
   overflow: auto !important;
 }
 
-.github code {
+.readable code {
   padding: 0 0.2em !important;
 }
 
-.github pre code {
+.readable pre code {
   padding: 0 !important;
-  font-size: 12px !important;
+  font-size: 16px !important;
   background-color: #F8F8FF !important;
   border: none !important;
 }
 
-.github blockquote {
+.readable blockquote {
   margin: 1em 0 !important;
-  border-left: 5px solid #DDD !important;
+  border-left: 5px solid #e0e0e0 !important;
   padding-left: 0.6em !important;
   color: #555 !important;
 }
 
-.github abbr {
+.readable abbr {
   border-bottom: none !important;
 }
 
-.github table {
+.readable table {
   margin: 1em 0 !important;
 }
 
-.github table th {
-  border-bottom: 1px solid #bbb !important;
+.readable table th {
+  border-bottom: 1px solid #e0e0e0 !important;
   padding: 0.2em 1em !important;
 }
 
-.github table td {
-  border-bottom: 1px solid #ddd !important;
+.readable table td {
+  border-bottom: 1px solid #e0e0e0 !important;
   padding: 0.2em 1em !important;
 }
 
