@@ -4,7 +4,7 @@ Markdown Preview allows you to compile and preview markdown as generated HTML
 files. It has the ability to select and use customized stylesheets for 
 previewing your own awesomeness. Previewing occurs within the default browser.
 
-For more information on the plugin: `:help markdown-preview` within vim or take a look at the [help files](http://github.com/mkitt/markdown-preview.vim/blob/master/doc/markdown-preview.txt) on github.
+For more information on the plugin: `:help markdown-preview` within Vim or take a look at the [help files](http://github.com/mkitt/markdown-preview.vim/blob/master/doc/markdown-preview.txt) on github.
 
 
 ## Install
@@ -17,13 +17,13 @@ Download, fork, clone, or use it as a submodule within your .vim directory.
 Markdown Preview requires the following:
 
 - Vim version 7.0 or above
-- Ruby support for vim
+- Ruby support for Vim
 - BlueCloth for converting markdown to html `gem install bluecloth`
 
 While not a requirement, default directories are tailored to work within a
 bundle directory as specified by the pathogen plugin.
 
-Has only been tested to work with MacVim at this point.
+Has only been tested to work with MacVim and Vim from Terminal at this point.
 
 
 ## Todo
@@ -31,6 +31,7 @@ Has only been tested to work with MacVim at this point.
 - Add the ability to save HTML output instead of the tmp directory?
 - Generate PDFs instead of using the browsers save as feature?
 - Navigate to position in browser from position of cursor within file
+- Remove the dependency for BlueCloth
 
 
 ## Credits

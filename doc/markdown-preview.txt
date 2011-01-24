@@ -37,7 +37,8 @@ Markdown Preview requires the following:
 While not a requirement, default directories are tailored to work within a
 bundle directory as specified by the pathogen plugin.
 
-Currently Markdown Preview has only been tested within MacVim.
+Currently Markdown Preview has only been tested within MacVim and Vim from
+the Terminal.
 ==============================================================================
 3. Usage                                *markdown-preview-usage*
 

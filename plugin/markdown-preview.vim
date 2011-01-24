@@ -36,8 +36,8 @@ if (exists("g:loaded_markdownpreview") && g:loaded_markdownpreview) || &cp
 endif
 let g:loaded_markdownpreview = 1
 
-" Scoot if not in gui
-if !has("gui_running")
+" Scoot if not in mac
+if !has("mac")
   finish
 endif
 
