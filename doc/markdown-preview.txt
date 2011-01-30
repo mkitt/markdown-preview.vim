@@ -4,7 +4,10 @@ Author:
   Matthew Kitt <mk dot kitt at gmail dot com>
 
 This plugin is licensed under the terms of the MIT License.  Please see
-markdown-preview.vim for the license in its entirety.
+markdown-preview.vim for the license in its entirety. For license info
+around the discount parser see:
+
+https://github.com/Orc/discount/blob/master/COPYRIGHT
 
 ==============================================================================
 Markdown Preview                        *markdown-preview*
@@ -31,8 +34,8 @@ previewing your own awesomeness. Previewing occurs within the default browser.
 
 Markdown Preview requires the following:
 - Vim version 7.0 or above
-- Ruby support for vim
-- BlueCloth for converting markdown to html (gem install bluecloth)
+- Discount for converting markdown to html and it's available in your path
+  (brew install discount) or see https://github.com/Orc/discount
 
 While not a requirement, default directories are tailored to work within a
 bundle directory as specified by the pathogen plugin.
@@ -89,7 +92,7 @@ g:MarkdownPreviewDefaultTheme           *markdown-preview-defaulttheme*
   are generated for the first time. Defaults to github which is bundled
   with the default styles. To override:
 
-    let g:MarkdownPreviewDefaultTheme = 'colorblind'
+    let g:MarkdownPreviewDefaultTheme = 'readable'
 
 g:MarkdownPreviewAlwaysOpen             *markdown-preview-alwaysopen*
   By default Markdown Preview will only open the browser window the first

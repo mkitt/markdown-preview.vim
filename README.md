@@ -17,8 +17,11 @@ Download, fork, clone, or use it as a submodule within your .vim directory.
 Markdown Preview requires the following:
 
 - Vim version 7.0 or above
-- Ruby support for Vim
-- BlueCloth for converting markdown to html `gem install bluecloth`
+- Discount for converting markdown to html and it's available in your path
+
+The easiest way to get Discount is `brew install discount` if your rocking 
+ homebrew. If not, see the installation instructions from [David Parson's Discount
+repository](https://github.com/Orc/discount)
 
 While not a requirement, default directories are tailored to work within a
 bundle directory as specified by the pathogen plugin.
@@ -28,13 +31,13 @@ Has only been tested to work with MacVim and Vim from Terminal at this point.
 
 ## Todo
 
-- Add the ability to save HTML output instead of the tmp directory?
 - Generate PDFs instead of using the browsers save as feature?
 - Navigate to position in browser from position of cursor within file
-- Remove the dependency for BlueCloth
 
 
 ## Credits
+
+- [David Parson's excellent Discount parser](http://www.pell.portland.or.us/~orc/Code/discount/)
 
 Inspired by:
 
