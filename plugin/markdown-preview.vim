@@ -192,7 +192,7 @@ function! MarkdownPreview()
     let l:file_with_extension = 'Untitled.md'
   endif
 
-  let l:file_name = fnamemodify(l:file_with_extension, ":r")
+  let l:file_name = fnamemodify(l:file_with_extension, ":t:r")
   let l:file_extension = fnamemodify(l:file_with_extension, ":e")
 
   " Bail if this isn't a markdown file and bark at the User
@@ -205,8 +205,8 @@ function! MarkdownPreview()
   let l:tmp_exists = filereadable(l:tmp_file)
   let l:converted = system('markdown '.l:file_with_extension)
 
-  let l:output_html = GetHTMLHead(l:file_with_extension)
-  let l:output_html .= GetHTMLHeader(l:file_with_extension)
+  let l:output_html = GetHTMLHead(l:file_name.'.'.l:file_extension)
+  let l:output_html .= GetHTMLHeader(l:file_name.'.'.l:file_extension)
   let l:output_html .= GetHTMLBody(l:converted)
   let l:output_html .= GetHTMLTail()
 
