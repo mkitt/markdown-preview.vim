@@ -33,7 +33,7 @@ previewing your own awesomeness. Previewing occurs within the default browser.
 2. Dependencies                         *markdown-preview-dependencies*
 
 Markdown Preview requires the following:
-- Vim version 7.0 or above
+- Vim version 7.0 or above with Ruby support
 - Discount for converting markdown to html and it's available in your path
   (brew install discount) or see https://github.com/Orc/discount
 

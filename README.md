@@ -16,7 +16,7 @@ Download, fork, clone, or use it as a submodule within your .vim directory.
 
 Markdown Preview requires the following:
 
-- Vim version 7.0 or above
+- Vim version 7.0 or above with Ruby support
 - Discount for converting markdown to html and it's available in your path
 
 The easiest way to get Discount is `brew install discount` if your rocking 
@@ -31,7 +31,7 @@ Has only been tested to work with MacVim and Vim from Terminal at this point.
 
 ## Todo
 
-- Generate PDFs instead of using the browsers save as feature?
+- Multiple User Style Directories
 - Navigate to position in browser from position of cursor within file
 
 

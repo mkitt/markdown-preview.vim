@@ -111,73 +111,66 @@ let s:user_styles_sheets = SetMDPStyleSheets(s:user_styles)
 let s:user_styles_names = SetMDPOptions(s:user_styles)
 
 " ------------------------------------------------------------------------------
-"  Internal Utility functions for concatenating the html document on parsing
+"  Internal Ruby utility function for concatenating the html document on parsing
 " ------------------------------------------------------------------------------
 
-" Return the head of the HTML document
-function! GetHTMLHead(title)
-  let l:str = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"/>' .
-            \ '<style>* {margin:0; padding:0;}</style>' .
-            \ s:default_styles_sheets .
-            \ s:user_styles_sheets .
-            \ '<title>'.a:title.'</title>' .
-            \ '</head>'
-  return l:str
-endfunction
-
-" Return the header of the HTML document
-function! GetHTMLHeader(title)
-  let l:str = '<body id="theme" class="'.g:MarkdownPreviewDefaultTheme.'">' .
-            \ '<div class="header">' .
-            \ '<h2>'.a:title.'</h2>' .
-            \ '<select id="selects" onchange="selectTheme(event);">' .
-            \ '<optgroup label="Default Themes">' .
-            \ s:default_styles_names .
-            \ '</optgroup>' .
-            \ '<optgroup label="User Themes">' .
-            \ s:user_styles_names .
-            \ '</optgroup>' .
-            \ '</select>' .
-            \ '</div>'
-  return l:str
-endfunction
-
-" Return the body of the HTML document
-function GetHTMLBody(mkd)
-  let l:str = '<div class="wikistyle">' .
-            \ a:mkd .
-            \ '</div>'
-  return l:str
-endfunction
-
-" Return the javascript for selecting drop downs, really missing heredoc
-function! GetHTMLTail()
-  let l:str = '<script language="javascript" type="text/javascript">' .
-            \ 'var themeID = document.getElementById("theme"),' .
-            \ 'selects = document.getElementById("selects"),' .
-            \ 'theme = themeID.className;' .
-            \ 'function setTheme(new_theme, auto_select) {' .
-            \ 'theme = new_theme;' .
-            \ 'if (auto_select) {' .
-            \ 'document.getElementById(theme).selected = "selected";' .
-            \ '}' .
-            \ 'themeID.className = theme;' .
-            \ 'window.location.href = window.location.pathname + "#" + theme;' .
-            \ '}' .
-            \ 'function selectTheme(e) {' .
-            \ 'setTheme(e.target.value, false);' .
-            \ '}' .
-            \ '(function () {' .
-            \ 'var hash = window.location.hash;' .
-            \ 'if (hash) {' .
-            \ 'theme = hash.substring(1, hash.length);' .
-            \ '}' .
-            \ 'setTheme(theme, true);' .
-            \ '}());' .
-            \ '</script>' .
-            \ '</body>' .
-            \ '</html>'
-  return l:str
+function! WriteFileWithRuby(mkd, tmp, title)
+ruby << EOF
+  layout = <<-LAYOUT
+  <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8"/>
+        <style>* {margin:0; padding:0;}</style>
+        #{VIM::evaluate('s:default_styles_sheets')}
+        #{VIM::evaluate('s:user_styles_sheets')}
+        <title>#{VIM::evaluate('a:title')}</title>
+      </head>
+      <body id="theme" class="#{VIM::evaluate('g:MarkdownPreviewDefaultTheme')}">
+        <div class="header">
+          <h2>#{VIM::evaluate('a:title')}</h2>
+          <select id="selects" onchange="selectTheme(event);">
+            <optgroup label="Default Themes">
+              #{VIM::evaluate('s:default_styles_names')}
+            </optgroup>
+            <optgroup label="User Themes">
+              #{VIM::evaluate('s:user_styles_names')}
+            </optgroup>
+          </select>
+        </div>
+        <div class="wikistyle">
+          #{VIM::evaluate('a:mkd')}
+        </div>
+        <script language="javascript" type="text/javascript">
+          var themeID = document.getElementById("theme"),
+              selects = document.getElementById("selects"),
+              theme = themeID.className;
+          function setTheme(new_theme, auto_select) {
+            theme = new_theme;
+            if (auto_select) {
+              document.getElementById(theme).selected = "selected";
+            }
+            themeID.className = theme;
+            window.location.href = window.location.pathname + "#" + theme;
+          }
+          function selectTheme(e) {
+            setTheme(e.target.value, false);
+          }
+          (function () {
+            var hash = window.location.hash;
+            if (hash) {
+              theme = hash.substring(1, hash.length);
+              setTheme(theme, true);
+            }
+          }());
+        </script>
+      </body>
+    </html>
+  LAYOUT
+  File.open(VIM::evaluate('a:tmp'), 'w') do |f|
+    f.write(layout)
+  end
+EOF
 endfunction
 
 " ------------------------------------------------------------------------------
@@ -205,16 +198,10 @@ function! MarkdownPreview()
   let l:tmp_exists = filereadable(l:tmp_file)
   let l:converted = system('markdown '.l:file_with_extension)
 
-  let l:output_html = GetHTMLHead(l:file_name.'.'.l:file_extension)
-  let l:output_html .= GetHTMLHeader(l:file_name.'.'.l:file_extension)
-  let l:output_html .= GetHTMLBody(l:converted)
-  let l:output_html .= GetHTMLTail()
-
-  silent! call writefile([l:output_html], l:tmp_file)
+  call WriteFileWithRuby(l:converted, l:tmp_file, l:file_name.'.'.l:file_extension)
 
   if ((!l:tmp_exists || g:MarkdownPreviewAlwaysOpen == 1) && has("mac"))
     silent! execute '!open '.l:tmp_file
-    " silent! redraw!
   endif
 endfunction
 
@@ -223,7 +210,6 @@ function! ClearMarkdownPreview()
   if !empty(globpath(g:MarkdownPreviewTMP, "*"))
     silent! execute '!rm -r '.g:MarkdownPreviewTMP.'*'
   endif
-  " silent! redraw!
 endfunction
 
 " Do it on load
