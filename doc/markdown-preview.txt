@@ -5,9 +5,9 @@ Author:
 
 This plugin is licensed under the terms of the MIT License.  Please see
 markdown-preview.vim for the license in its entirety. For license info
-around the discount parser see:
+around the redcarpet parser see:
 
-https://github.com/Orc/discount/blob/master/COPYRIGHT
+https://github.com/tanoku/redcarpet/blob/master/COPYING
 
 ==============================================================================
 Markdown Preview                        *markdown-preview*
@@ -34,8 +34,19 @@ previewing your own awesomeness. Previewing occurs within the default browser.
 
 Markdown Preview requires the following:
 - Vim version 7.0 or above with Ruby support
-- Discount for converting markdown to html and it's available in your path
-  (brew install discount) or see https://github.com/Orc/discount
+- redcarpet for converting markdown to html and it's available in your path
+  (gem install redcarpet) or see https://github.com/tanoku/redcarpet
+
+redcarpet is run with the following extensions turned on:
+- :hard_wrap
+- :gh_blockcode
+- :autolink
+- :tables
+- :strikethrough
+- :fenced_code
+- :lax_htmlblock
+- :no_intraemphasis
+- :space_header
 
 While not a requirement, default directories are tailored to work within a
 bundle directory as specified by the pathogen plugin.
