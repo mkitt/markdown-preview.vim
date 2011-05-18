@@ -1,3 +1,5 @@
+## NOTE THE REDCARPET IMPLEMENTATION HAS BEEN ROLLED BACK TO DISCOUNT. RUBY GEMS IS BASICALLY A JUNK SHOW AT THE MOMENT. MORE COMING SOON
+
 # markdown-preview.vim
 
 Markdown Preview allows you to compile and preview markdown as generated HTML files. It has the ability to select and use customized stylesheets for  previewing your own awesomeness. Previewing occurs within the default browser.

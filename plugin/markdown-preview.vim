@@ -37,7 +37,8 @@ endif
 let g:loaded_markdownpreview = 1
 
 " Scoot if the executable isn't installed
-if !executable('redcarpet')
+" if !executable('redcarpet')
+if !executable('markdown')
   finish
 endif
 
@@ -113,6 +114,7 @@ let s:user_styles_names = SetMDPOptions(s:user_styles)
 " ------------------------------------------------------------------------------
 "  Internal Ruby utility function for concatenating the html document on parsing
 " ------------------------------------------------------------------------------
+" #{Redcarpet.new(File.read(VIM::evaluate('a:mkd')), :hard_wrap, :gh_blockcode, :autolink, :tables, :strikethrough, :fenced_code, :lax_htmlblock, :no_intraemphasis, :space_header).to_html}
 
 function! WriteFileWithRuby(mkd, tmp, title)
 ruby << EOF
@@ -141,7 +143,7 @@ ruby << EOF
           </select>
         </div>
         <div class="wikistyle">
-          #{Redcarpet.new(File.read(VIM::evaluate('a:mkd')), :hard_wrap, :gh_blockcode, :autolink, :tables, :strikethrough, :fenced_code, :lax_htmlblock, :no_intraemphasis, :space_header).to_html}
+          #{VIM::evaluate('a:mkd')}
         </div>
         <script language="javascript" type="text/javascript">
           var themeID = document.getElementById("theme"),
@@ -198,8 +200,10 @@ function! MarkdownPreview()
 
   let l:tmp_file = g:MarkdownPreviewTMP . l:file_name . '.html'
   let l:tmp_exists = filereadable(l:tmp_file)
+  let l:converted = system('markdown '.l:file_with_extension)
 
-  call WriteFileWithRuby(l:file_with_extension, l:tmp_file, l:file_name.'.'.l:file_extension)
+  call WriteFileWithRuby(l:converted, l:tmp_file, l:file_name.'.'.l:file_extension)
+  " call WriteFileWithRuby(l:file_with_extension, l:tmp_file, l:file_name.'.'.l:file_extension)
 
   if ((!l:tmp_exists || g:MarkdownPreviewAlwaysOpen == 1) && has("mac"))
     silent! execute '!open '.l:tmp_file
