@@ -115,11 +115,11 @@ let s:user_styles_names = SetMDPOptions(s:user_styles)
 "  Internal Ruby utility function for concatenating the html document on parsing
 " ------------------------------------------------------------------------------
 " #{Redcarpet.new(File.read(VIM::evaluate('a:mkd')), :hard_wrap, :gh_blockcode, :autolink, :tables, :strikethrough, :fenced_code, :lax_htmlblock, :no_intraemphasis, :space_header).to_html}
+  " require 'rubygems'
+  " require 'redcarpet'
 
 function! WriteFileWithRuby(mkd, tmp, title)
 ruby << EOF
-  require 'rubygems'
-  require 'redcarpet'
   layout = <<-LAYOUT
   <!DOCTYPE html>
     <html lang="en">
