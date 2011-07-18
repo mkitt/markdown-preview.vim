@@ -146,7 +146,7 @@
 
 .readable pre,
 .readable code {
-  font: 16px Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace !important;
+  font: 16px "Bitstream Vera Sans Mono", Monaco, "Courier New", "DejaVu Sans Mono", monospace !important;
   font-size: 16px !important;
   background-color: #F8F8FF !important;
   color: #444 !important;
