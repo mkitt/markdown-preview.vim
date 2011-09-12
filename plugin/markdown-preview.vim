@@ -200,7 +200,7 @@ function! MarkdownPreview()
 
   let l:tmp_file = g:MarkdownPreviewTMP . l:file_name . '.html'
   let l:tmp_exists = filereadable(l:tmp_file)
-  let l:converted = system('markdown '.l:file_with_extension)
+  let l:converted = system('markdown -f +autolink '.l:file_with_extension)
 
   call WriteFileWithRuby(l:converted, l:tmp_file, l:file_name.'.'.l:file_extension)
   " call WriteFileWithRuby(l:file_with_extension, l:tmp_file, l:file_name.'.'.l:file_extension)
