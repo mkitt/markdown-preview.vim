@@ -207,7 +207,7 @@ function! MarkdownPreview()
   let l:tmp_exists = filereadable(l:tmp_file)
 
   if (s:parser == "carpet")
-    let l:converted = system('redcarpet --parse-autolink --parse-no_intra_emphasis --parse-tables --parse-fenced_code_blocks --parse-lax_html_blocks --parse-strikethrough --parse-superscript --parse-space_after_headers --render-hard_wrap  '.l:file_with_extension)
+    let l:converted = system('redcarpet --parse-autolink --parse-no_intra_emphasis --parse-tables --parse-fenced_code_blocks --parse-lax_html_blocks --parse-strikethrough --parse-superscript --parse-space_after_headers  '.l:file_with_extension)
   else
     let l:converted = system('markdown -f +autolink '.l:file_with_extension)
   endif
