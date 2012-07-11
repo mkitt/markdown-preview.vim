@@ -1,13 +1,13 @@
 # markdown-preview.vim
 
-Markdown Preview allows you to compile and preview markdown as generated HTML files. It has the ability to select and use customized stylesheets for  previewing your own awesomeness. Previewing occurs within the default browser.
+Markdown Preview allows you to compile and preview markdown as generated HTML files. It has the ability to select and use customized stylesheets for previewing your own awesomeness. Previewing occurs within the default browser.
 
 For more information on the plugin: `:help markdown-preview` within Vim or take a look at the [help files](http://github.com/mkitt/markdown-preview.vim/blob/master/doc/markdown-preview.txt) on github.
 
 
 ## Install
 
-Download, fork, clone, or use it as a submodule within your .vim directory.
+Download, fork, clone, or use it as a submodule within your `~/.vim/` directory.
 
 
 ## Dependencies
@@ -15,22 +15,34 @@ Download, fork, clone, or use it as a submodule within your .vim directory.
 Markdown Preview requires the following:
 
 - Vim version 7.0 or above with Ruby support
-- Discount for converting markdown to html and it's available in your path
 
-The easiest way to get Discount is `brew install discount` if your rocking homebrew. If not, see the installation instructions from [David Parson's Discount repository](https://github.com/Orc/discount)
+Either:
+
+- Redcarpet - The default parser to use if it's installed
+- Discount - The backup parser to use if redcarpet is not found
+
+To get the [Redcarpet](https://github.com/tanoku/redcarpe://github.com/tanoku/redcarpet) parser:
+
+~~~
+gem install redcarpet
+~~~
+
+The easiest way to get Discount if your rocking homebrew is:
+
+~~~
+brew install discount
+~~~
+
+If not, see the installation instructions from [David Parson's Discount repository](https://github.com/Orc/discount)
 
 While not a requirement, default directories are tailored to work within a bundle directory as specified by the pathogen plugin.
 
-Has only been tested to work with MacVim and Vim from Terminal at this point.
-
-
-## Todo
-
-- Multiple User Style Directories
+Currently tested to work with MacVim and Vim from Terminal.
 
 
 ## Credits
 
+- [Tanoku's Redcarpet gem](https://github.com/tanoku/redcarpe://github.com/tanoku/redcarpet)
 - [David Parson's excellent Discount parser](http://www.pell.portland.or.us/~orc/Code/discount/)
 
 Inspired by:
@@ -45,7 +57,7 @@ Contributions are welcome, simply fork do your magic and send me a pull request.
 
 ## MIT License
 
-Copyright (c) 2010 by Matthew Kitt
+Copyright (c) 2012 by Matthew Kitt
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation
