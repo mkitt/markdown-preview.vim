@@ -37,9 +37,14 @@ endif
 let g:loaded_markdownpreview = 1
 
 " Scoot if the executable isn't installed
-" if !executable('redcarpet')
-if !executable('markdown')
+if !executable('redcarpet') || !executable('markdown')
   finish
+endif
+
+if executable('redcarpet')
+  let s:parser = 'carpet'
+else
+  let s:parser = 'markdown'
 endif
 
 " Globals (can be overriden in .vimrc)
@@ -200,10 +205,14 @@ function! MarkdownPreview()
 
   let l:tmp_file = g:MarkdownPreviewTMP . l:file_name . '.html'
   let l:tmp_exists = filereadable(l:tmp_file)
-  let l:converted = system('markdown -f +autolink '.l:file_with_extension)
+
+  if (s:parser == "carpet")
+    let l:converted = system('redcarpet --parse-autolink --parse-no_intra_emphasis --parse-tables --parse-fenced_code_blocks --parse-lax_html_blocks --parse-strikethrough --parse-superscript --parse-space_after_headers elements.md '.l:file_with_extension)
+  else
+    let l:converted = system('markdown -f +autolink '.l:file_with_extension)
+  endif
 
   call WriteFileWithRuby(l:converted, l:tmp_file, l:file_name.'.'.l:file_extension)
-  " call WriteFileWithRuby(l:file_with_extension, l:tmp_file, l:file_name.'.'.l:file_extension)
 
   if ((!l:tmp_exists || g:MarkdownPreviewAlwaysOpen == 1) && has("mac"))
     silent! execute '!open '.l:tmp_file
