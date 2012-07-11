@@ -68,6 +68,7 @@ Redcarpet:
 - strikethrough
 - superscript
 - space_after_headers
+- hard_wrap
 
 Discount:
 - +autolink
