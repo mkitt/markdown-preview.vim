@@ -83,7 +83,7 @@ function! SetMDPStyleSheets(style_dir)
   let l:mapped = split(a:style_dir, "\n")
   for item in l:mapped
     if filereadable(item.'style.css')
-      let l:style_refs .= '<link href="'.item.'style.css" rel="stylesheet" media="screen, projection" />'
+      let l:style_refs .= '<link href="'.item.'style.css" rel="stylesheet" media="all" />'
     endif
     if filereadable(item.'print.css')
       let l:style_refs .= '<link href="'.item.'print.css" rel="stylesheet" media="print" />'
