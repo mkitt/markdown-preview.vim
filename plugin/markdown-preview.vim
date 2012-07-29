@@ -37,7 +37,7 @@ endif
 let g:loaded_markdownpreview = 1
 
 " Scoot if the executable isn't installed
-if !executable('redcarpet') || !executable('markdown')
+if !executable('redcarpet') && !executable('markdown')
   finish
 endif
 
