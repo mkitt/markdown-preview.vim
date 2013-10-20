@@ -2,7 +2,7 @@
   font: 13px Helvetica,arial,freesans,clean,sans-serif;
   line-height: 1.4;
   color: #333;
-  width: 920px;
+  width: 790px;
   margin: 0 auto;
   padding: 0;
   border: 0;
@@ -24,7 +24,7 @@
 
 .github .header h2 {
   font-size: 16px;
-  line-height: 0;
+  line-height: 14px;
   font-weight: bold;
   padding-left: 10px;
   color: #555;
@@ -33,7 +33,7 @@
 }
 
 .github .header select {
-  margin-top: -19px;
+  margin-top: -33px;
   margin-right: 10px;
   float: right;
 }
